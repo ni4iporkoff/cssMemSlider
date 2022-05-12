@@ -6,7 +6,7 @@
 
 body {
     position: relative;
-    background-color: rgb(39,43,53);
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
 }
 
 .wrapper {
@@ -34,11 +34,27 @@ body {
 .slider__item {
     width: 25%;
     transition: .5s;
+    display: flex;
 }
 
 .slider__item_img {
     max-width: 100%;
     height: auto;
+    border-radius: 1rem;
+}
+
+.slider__elements {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.slider__text .text {
+    height: 0;
+    opacity: 0;
+    transition: .5s;
+    font-size: 2rem;
+    color: rgb(233,233,231);
 }
 
 .slider__descr_items {
@@ -51,18 +67,9 @@ body {
     position: relative;
     padding: 0.2rem 0.7rem;
     margin: 0 0.5em;
-    background-color: #fff;
     border-radius: 50%;
     cursor: pointer;
-    outline: 0.2rem solid #ccc;
-}
-
-.item1 {
-    background-color: #fff;
-}
-
-.item2 {
-    background-color: #fff;
+    outline: 0.2rem solid  #485563;
 }
 
 #input1, 
@@ -76,32 +83,52 @@ body {
 
 #input1:checked ~ .slider__items .input1 {
     margin-left: 0;
+    transition: 1.5s;
 }
 
 #input2:checked ~ .slider__items .input1 {
     margin-left: -25%;
+    transition: 1.5s;
 }
 
 #input3:checked ~ .slider__items .input1 {
     margin-left: -50%;
+    transition: 1.5s;
 }
 
 #input4:checked ~ .slider__items .input1 {
     margin-left: -75%;
+    transition: 1.5s;
 }
 
-#input1:checked ~ .slider__descr_items .item1 {
-    background-color: #000;
+#input1:checked ~ .slider__elements .slider__descr_items .item1 {
+    background-color: #a5b5c9;
 }
 
-#input2:checked ~ .slider__descr_items .item2 {
-    background-color: #000;
+#input2:checked ~ .slider__elements .slider__descr_items .item2 {
+    background-color: #a5b5c9;
 }
 
-#input3:checked ~ .slider__descr_items .item3 {
-    background-color: #000;
+#input3:checked ~ .slider__elements .slider__descr_items .item3 {
+    background-color: #a5b5c9;
 }
 
-#input4:checked ~ .slider__descr_items .item4 {
-    background-color: #000;
+#input4:checked ~ .slider__elements .slider__descr_items .item4 {
+    background-color: #a5b5c9;
+}
+
+#input1:checked ~ .slider__elements .slider__text .text1 {
+    opacity: 1;
+}
+
+#input2:checked ~ .slider__elements .slider__text .text2 {
+    opacity: 1;
+}
+
+#input3:checked ~ .slider__elements .slider__text .text3 {
+    opacity: 1;
+}
+
+#input4:checked ~ .slider__elements .slider__text .text4 {
+    opacity: 1;
 }
