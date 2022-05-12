@@ -57,29 +57,51 @@ body {
     outline: 0.2rem solid #ccc;
 }
 
+.item1 {
+    background-color: #fff;
+}
+
+.item2 {
+    background-color: #fff;
+}
+
 #input1, 
 #input2, 
 #input3,
 #input4 {
-    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
 }
 
-#input1:checked ~ .input1 {
+#input1:checked ~ .slider__items .input1 {
     margin-left: 0;
 }
 
-#input1:checked ~ .item1 {
-    margin-left: 0;
-}
-
-#input2:checked ~ .input1 {
+#input2:checked ~ .slider__items .input1 {
     margin-left: -25%;
 }
 
-#input3:checked ~ .input1 {
+#input3:checked ~ .slider__items .input1 {
     margin-left: -50%;
 }
 
-#input4:checked ~ .input1 {
+#input4:checked ~ .slider__items .input1 {
     margin-left: -75%;
+}
+
+#input1:checked ~ .slider__descr_items .item1 {
+    background-color: #000;
+}
+
+#input2:checked ~ .slider__descr_items .item2 {
+    background-color: #000;
+}
+
+#input3:checked ~ .slider__descr_items .item3 {
+    background-color: #000;
+}
+
+#input4:checked ~ .slider__descr_items .item4 {
+    background-color: #000;
 }
