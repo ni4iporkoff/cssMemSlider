@@ -5,12 +5,10 @@
 }
 
 body {
-    position: relative;
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    background-image: linear-gradient(to bottom, #434343 0%, rgb(43, 38, 38) 100%);
 }
 
 .wrapper {
-    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -19,9 +17,8 @@ body {
 }
 
 .slider {
-    position: relative;
     overflow: hidden;
-    max-width: 60em;
+    max-width: 85%;
     height: auto;
 }
 
@@ -47,29 +44,50 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
+    flex-direction: row-reverse;
+}
+
+.slider__text {
+    height: 8rem;
 }
 
 .slider__text .text {
-    height: 0;
     opacity: 0;
-    transition: .5s;
     font-size: 2rem;
-    color: rgb(233,233,231);
+    color: rgb(168, 168, 170);
+    align-items: center;
+    text-shadow: .1rem .1rem .3rem #ff99cc;
+    margin: 0;
+    transition:.5s;
+    height: 2rem;
 }
 
 .slider__descr_items {
-    margin-top: 1rem;
-    text-align: center;
-    height: 4em;
+    display: flex;
 }
 
 .slider__descr_item {
-    position: relative;
-    padding: 0.2rem 0.7rem;
+    cursor: pointer;
+}
+
+.circle {
+    width: 2rem;
+    height: 2rem;
     margin: 0 0.5em;
     border-radius: 50%;
-    cursor: pointer;
-    outline: 0.2rem solid  #485563;
+    background-color: #485563;
+    border: .2rem solid rgb(143, 135, 135);
+}
+
+/* IT'S NOT A PSEUDOELEMENT, IT'S PSEUDOCLASS */
+.circle:active {
+    background: transparent;
+}
+
+/* IT'S NOT A PSEUDOELEMENT, IT'S PSEUDOCLASS */
+.circle:hover {
+    background: #a5b5c9;
+    box-shadow: 0 0 .5rem #fff;
 }
 
 #input1, 
@@ -81,8 +99,8 @@ body {
     height: 0;
 }
 
+/* BELOW IT'S NOT A PSEUDOELEMENTES, IT'S PSEUDOCLASSES */
 #input1:checked ~ .slider__items .input1 {
-    margin-left: 0;
     transition: 1.5s;
 }
 
@@ -101,34 +119,46 @@ body {
     transition: 1.5s;
 }
 
-#input1:checked ~ .slider__elements .slider__descr_items .item1 {
+#input1:checked ~ .slider__elements .slider__descr_items .item1 .circle {
     background-color: #a5b5c9;
+    box-shadow: 0 0 .8rem #fff;
 }
 
-#input2:checked ~ .slider__elements .slider__descr_items .item2 {
+#input2:checked ~ .slider__elements .slider__descr_items .item2 .circle {
     background-color: #a5b5c9;
+    box-shadow: 0 0 .5rem #fff;
+    transition: .5s;
 }
 
-#input3:checked ~ .slider__elements .slider__descr_items .item3 {
+#input3:checked ~ .slider__elements .slider__descr_items .item3 .circle {
     background-color: #a5b5c9;
+    box-shadow: 0 0 .5rem #fff;
 }
 
-#input4:checked ~ .slider__elements .slider__descr_items .item4 {
+#input4:checked ~ .slider__elements .slider__descr_items .item4 .circle {
     background-color: #a5b5c9;
+    box-shadow: 0 0 .5rem #fff;
 }
 
 #input1:checked ~ .slider__elements .slider__text .text1 {
     opacity: 1;
+    transition: .5s;
 }
 
 #input2:checked ~ .slider__elements .slider__text .text2 {
     opacity: 1;
+    transition: .5s;
+    transform: translateY(-2rem);
 }
 
 #input3:checked ~ .slider__elements .slider__text .text3 {
     opacity: 1;
+    transition: .5s;
+    transform: translateY(-4rem);
 }
 
 #input4:checked ~ .slider__elements .slider__text .text4 {
     opacity: 1;
+    transition: .5s;
+    transform: translateY(-6rem);
 }
