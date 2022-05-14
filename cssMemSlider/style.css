@@ -18,7 +18,7 @@ body {
 
 .slider {
     overflow: hidden;
-    max-width: 85%;
+    max-width: 50rem;
     height: auto;
 }
 
@@ -163,7 +163,11 @@ body {
     transform: translateY(-6rem);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .slider {
+        max-width: 80%;
+    }
+
     .slider__elements {
         flex-direction: column;
     }
