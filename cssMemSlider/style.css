@@ -162,3 +162,21 @@ body {
     transition: .5s;
     transform: translateY(-6rem);
 }
+
+@media (max-width: 768px) {
+    .slider__elements {
+        flex-direction: column;
+    }
+    
+    .slider__descr_items {
+        align-self: center;
+    }
+
+    .slider__text {
+        margin-top: 2rem;
+    }
+
+    .slider__text .text {
+        font-size: 1.5rem;
+    }
+}
